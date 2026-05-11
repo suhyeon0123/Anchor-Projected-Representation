@@ -242,7 +242,6 @@ pre-defined; treat them as fixed hyperparameters.
   title     = {Cross-Family Universality of Behavioral Axes via
                Anchor-Projected Representations},
   author    = {Anonymous},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
   year      = {2026},
 }
 ```
