@@ -1,0 +1,57 @@
+# =====================================================================
+# ACS — Anchor-Projected Coordinate Space
+# .gitignore for the public release repository
+# =====================================================================
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+.env
+
+# Local outputs (per-machine, large)
+outputs/
+.cache/
+.cache_acs/
+
+# Cached intermediate artifacts (regenerable)
+**/_cache/
+
+# Activations and other large binaries
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.h5
+
+# LaTeX build products
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb

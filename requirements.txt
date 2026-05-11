@@ -1,0 +1,18 @@
+# Core
+torch>=2.0
+transformers>=4.40
+accelerate>=0.30
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+PyYAML>=6.0
+tqdm>=4.65
+
+# Plotting
+matplotlib>=3.7
+
+# Hugging Face datasets (only needed if you rebuild axis jsonl from scratch)
+datasets>=2.14
+
+# Optional: nicer fonts in figures
+# (Times New Roman is referenced by the figure scripts; falls back gracefully)
