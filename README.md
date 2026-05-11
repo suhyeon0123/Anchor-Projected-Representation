@@ -48,25 +48,20 @@ across families.
 
 ## How it works (3 steps)
 
-$$
-\begin{array}{|l|}
-\hline
-\text{1. Anchor Projection (per model, no training)} \\
-\quad A_m = \text{forward}(\text{model}_m, \text{anchor\_pool}) \\
-\quad \pi_m = \text{RowNormalize}(A_m - \text{mean}(A_m)) \\
-\\
-\text{2. Native } \rightarrow \text{ Canonical (in ACS, } \mathbb{R}^N=300\text{)} \\
-\quad \begin{array}{ll}
-v_a^{(m)} = \text{mean}(\text{pos}_a) - \text{mean}(\text{neg}_a) & \text{\# native dir} \\
-u_a^{(m)} = \pi_m \cdot v_a^{(m)} & \text{\# in ACS} \\
-c_a = \frac{1}{|S|} \sum_{m \in \text{sources}} u_a^{(m)} & \text{\# canonical}
-\end{array} \\
-\\
-\text{3. Reconstruct (target model, anchors only)} \\
-\quad v_a^{(m_u, \text{recon})} = \pi_{m_u}^T \cdot c_a \\
-\hline
-\end{array}
-$$
+```text
+1. Anchor Projection  (per model, no training)
+   A_m  = forward(model_m, anchor_pool)
+   pi_m = RowNormalize(A_m - mean(A_m))
+
+2. Native -> Canonical  (in ACS, R^N = 300)
+   v_a^(m) = mean(pos_a) - mean(neg_a)        # native direction
+   u_a^(m) = pi_m · v_a^(m)                   # projected into ACS
+   c_a     = average_m u_a^(m)                # canonical direction
+
+3. Reconstruct  (target model, anchors only)
+   v_a^(mu, recon) = pi_mu^T · c_a
+```
+
 
 **Step 1 — Anchor Projection.**  
 Forward the same anchor prompts through each model to build a model-specific projector into the shared Anchor Coordinate Space (ACS).
