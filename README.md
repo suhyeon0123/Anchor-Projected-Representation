@@ -22,11 +22,17 @@ periphery.*
 
 ## Highlights
 
-- **Build a shared coordinate space across unrelated LLM families.**  
-  We map hidden states from Llama, Qwen, Mistral, Phi, and Gemma into the same 300-dimensional Anchor Coordinate Space (ACS), even though the models have different hidden sizes, tokenizers, and training recipes.
+## Highlights
 
-- **Transfer behavioral directions without target-model labels.**  
-  A direction learned from source models—such as refusal, sentiment, math, or bias—can be projected into ACS and reconstructed in a new model using only that model’s anchor activations. No retraining are required.
+- 🌐 **Turn incompatible model internals into one shared behavioral geometry.**  
+  ACS maps hidden states from Llama, Qwen, Mistral, Phi, and Gemma into the same Anchor Coordinate Space, making behavioral directions comparable even when models have different hidden sizes, tokenizers, and training recipes.
+
+- 🔁 **Transfer behavior vectors to a new model with only anchor activations.**  
+  Instead of re-extracting refusal, sentiment, math, or bias vectors for every new model, we project source-model directions into ACS and reconstruct them in the target model using only anchor prompts. No target-model labeling, no fine-tuning, and no learned alignment map are required.
+
+- 🧪**Use the transferred directions for real detection and steering.**  
+  ACS is not just a visualization space: reconstructed canonical directions improve OOD refusal behavior by up to **Δ = 46.0%** under jailbreak-style distribution shift.
+
 
 
 
