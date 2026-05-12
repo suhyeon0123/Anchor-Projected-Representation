@@ -6,6 +6,7 @@ We introduce a shared coordinate system in which behavioral directions extracted
 set of LLMs transfer to a previously unseen model — **without target-specific
 fine-tuning, axis-labeled data, or a learned mapping.**
 
+[![arxiv](https://img.shields.io/badge/arXiv-2605.09875-b31b1b.svg)](https://arxiv.org/abs/2605.09875)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![python](https://img.shields.io/badge/python-3.10%2B-blueviolet)](#)
 
